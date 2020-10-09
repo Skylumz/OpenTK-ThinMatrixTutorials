@@ -1,0 +1,16 @@
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\3DModelThingy.exe.config
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\3DModelThingy.exe
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\3DModelThingy.pdb
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\obj\Debug\3DModelThingy.csprojAssemblyReference.cache
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\obj\Debug\_3DModelThingy.Properties.Resources.resources
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\obj\Debug\3DModelThingy.csproj.GenerateResource.cache
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\obj\Debug\3DModelThingy.csproj.CoreCompileInputs.cache
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\obj\Debug\3DModelThingy.exe
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\obj\Debug\3DModelThingy.pdb
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\OpenTK.dll
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\OpenTK.GLControl.dll
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\OpenTK.pdb
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\OpenTK.xml
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\OpenTK.GLControl.pdb
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\OpenTK.GLControl.xml
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\obj\Debug\3DModelThingy.csproj.CopyComplete
