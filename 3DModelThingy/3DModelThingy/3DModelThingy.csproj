@@ -55,7 +55,6 @@
     <Compile Include="EngineTester\MainGameLoop.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RenderEngine\DisplayManager.cs" />
     <Compile Include="RenderEngine\Loader.cs" />
     <Compile Include="RenderEngine\RawModel.cs" />
     <Compile Include="RenderEngine\Renderer.cs" />

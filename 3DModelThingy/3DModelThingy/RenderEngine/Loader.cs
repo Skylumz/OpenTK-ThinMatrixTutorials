@@ -14,12 +14,13 @@ namespace _3DModelThingy.RenderEngine
         private List<int> vaos = new List<int>();
         private List<int> vbos = new List<int>();
 
-        public RawModel LoadToVAO(float[] positions)
+        public RawModel LoadToVAO(float[] positions, int[] indicies)
         {
             int vaoID = CreateVAO();
+            BindIndiciesBuffer(indicies);
             StoreDataInAttributeList(0, positions);
             UnbindVAO();
-            return new RawModel(vaoID, positions.Length / 3);
+            return new RawModel(vaoID, indicies.Length);
         }
 
         private int CreateVAO() 
@@ -43,6 +44,14 @@ namespace _3DModelThingy.RenderEngine
         private void UnbindVAO() 
         {
             GL.BindVertexArray(0);
+        }
+
+        private void BindIndiciesBuffer(int[] indicies)
+        {
+            int vboID = GL.GenBuffer();
+            vbos.Add(vboID);
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, vboID);
+            GL.BufferData<int>(BufferTarget.ElementArrayBuffer, indicies.Length * sizeof(int), indicies, BufferUsageHint.StaticDraw);
         }
 
         public void CleanUp()

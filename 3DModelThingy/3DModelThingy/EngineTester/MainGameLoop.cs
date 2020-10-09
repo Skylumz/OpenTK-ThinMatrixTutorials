@@ -19,14 +19,16 @@ namespace _3DModelThingy.EngineTester
 
         float[] vertices =
         {
-            //left bottom triangle
-            -0.5f, 0.5f, 0f,
-            -0.5f, -0.5f, 0f,
-            0.5f, -0.5f, 0f,
-            //right top triangle
-            0.5f, -0.5f, 0f,
-            0.5f, 0.5f, 0f,
-            -0.5f, 0.5f, 0f,
+            -0.5f, 0.5f, 0f, //V0
+            -0.5f, -0.5f, 0f, //V1
+            0.5f, -0.5f, 0f, //V2
+            0.5f, 0.5f, 0f, //V3
+        };
+
+        int[] indicies =
+        {
+            0, 1, 3, //top left triangle
+            3, 1, 2 //bottom right triangle
         };
 
         RawModel model;
@@ -42,7 +44,7 @@ namespace _3DModelThingy.EngineTester
 
         public void Start()
         {
-            model = loader.LoadToVAO(vertices);
+            model = loader.LoadToVAO(vertices, indicies);
 
             Run(FPS_CAP);
         }
