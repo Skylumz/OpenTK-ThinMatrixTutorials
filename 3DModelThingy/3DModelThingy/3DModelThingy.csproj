@@ -53,13 +53,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EngineTester\MainGameLoop.cs" />
+    <Compile Include="Models\TexturedModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenderEngine\Loader.cs" />
-    <Compile Include="RenderEngine\RawModel.cs" />
+    <Compile Include="Models\RawModel.cs" />
     <Compile Include="RenderEngine\Renderer.cs" />
     <Compile Include="Shaders\ShaderProgram.cs" />
     <Compile Include="Shaders\StaticShader.cs" />
+    <Compile Include="Textures\ModelTexture.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -85,6 +87,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\image.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Shaders\fragmentShader.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

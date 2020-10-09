@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _3DModelThingy.RenderEngine
+namespace _3DModelThingy.Models 
 {
     public class RawModel
     {

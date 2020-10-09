@@ -16,3 +16,4 @@ D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\OpenTK.GLC
 D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\obj\Debug\3DModelThingy.csproj.CopyComplete
 D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\Shaders\fragmentShader.txt
 D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\Shaders\vertexShader.txt
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\Resources\image.jpg

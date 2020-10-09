@@ -1,5 +1,7 @@
-﻿using _3DModelThingy.RenderEngine;
+﻿using _3DModelThingy.Models;
+using _3DModelThingy.RenderEngine;
 using _3DModelThingy.Shaders;
+using _3DModelThingy.Textures;
 using OpenTK;
 using System;
 using System.Collections.Generic;
@@ -33,7 +35,17 @@ namespace _3DModelThingy.EngineTester
             3, 1, 2 //bottom right triangle
         };
 
+        float[] textureCoords =
+        {
+            0, 0, //V0
+            0, 1, //V1
+            1, 1, //V2 
+            1, 0 //V3
+        };
+
         RawModel model;
+        ModelTexture modelTexture;
+        TexturedModel texturedModel;
 
         public MainGameLoop(string t)
         {
@@ -49,8 +61,10 @@ namespace _3DModelThingy.EngineTester
             loader = new Loader();
             renderer = new Renderer();
             shader = new StaticShader();
-
-            model = loader.LoadToVAO(vertices, indicies);
+            
+            model = loader.LoadToVAO(vertices, textureCoords, indicies);
+            modelTexture = new ModelTexture(loader.LoadTexture("Resources\\image.jpg"));
+            texturedModel = new TexturedModel(model, modelTexture);
 
             Run(FPS_CAP);
         }
@@ -62,7 +76,7 @@ namespace _3DModelThingy.EngineTester
             renderer.Prepare(WIDTH, HEIGHT);
 
             shader.Start();
-            renderer.Render(model);
+            renderer.RenderTexturedModel(texturedModel);
             shader.Stop();
 
             SwapBuffers();
