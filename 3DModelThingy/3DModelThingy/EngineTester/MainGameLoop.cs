@@ -1,4 +1,5 @@
 ﻿using _3DModelThingy.RenderEngine;
+using _3DModelThingy.Shaders;
 using OpenTK;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,9 @@ namespace _3DModelThingy.EngineTester
         public static readonly int HEIGHT = 720;
         public static readonly int FPS_CAP = 120;
 
-        private Loader loader = new Loader();
-        private Renderer renderer = new Renderer();
+        private Loader loader;
+        private Renderer renderer;
+        private StaticShader shader;
 
         float[] vertices =
         {
@@ -44,6 +46,10 @@ namespace _3DModelThingy.EngineTester
 
         public void Start()
         {
+            loader = new Loader();
+            renderer = new Renderer();
+            shader = new StaticShader();
+
             model = loader.LoadToVAO(vertices, indicies);
 
             Run(FPS_CAP);
@@ -54,7 +60,10 @@ namespace _3DModelThingy.EngineTester
             base.OnRenderFrame(e);
 
             renderer.Prepare(WIDTH, HEIGHT);
+
+            shader.Start();
             renderer.Render(model);
+            shader.Stop();
 
             SwapBuffers();
         }
@@ -62,6 +71,7 @@ namespace _3DModelThingy.EngineTester
         private void CleanUp()
         {
             loader.CleanUp();
+            shader.CleanUp();
         }
     }
 }

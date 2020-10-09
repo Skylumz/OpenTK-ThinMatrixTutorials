@@ -1,0 +1,85 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using OpenTK;
+using OpenTK.Graphics.OpenGL4;
+
+namespace _3DModelThingy.Shaders
+{
+    public abstract class ShaderProgram
+    {
+        public int ProgramID { get; set; }
+        public int VertexShaderID { get; set; }
+        public int FragmentShaderID { get; set; }
+
+        public ShaderProgram(string vertexShaderPath, string fragmentShaderPath)
+        {
+            VertexShaderID = loadShader(vertexShaderPath, ShaderType.VertexShader);
+            FragmentShaderID = loadShader(fragmentShaderPath, ShaderType.FragmentShader);
+            ProgramID = GL.CreateProgram();
+            GL.AttachShader(ProgramID, VertexShaderID);
+            GL.AttachShader(ProgramID, FragmentShaderID);
+            GL.LinkProgram(ProgramID);
+            GL.ValidateProgram(ProgramID);
+            BindAttributes();
+        }
+
+        public void Start()
+        {
+            GL.UseProgram(ProgramID);
+        }
+
+        public void Stop()
+        {
+            GL.UseProgram(0);
+        }
+
+        public void CleanUp()
+        {
+            Stop();
+            GL.DetachShader(ProgramID, VertexShaderID);
+            GL.DetachShader(ProgramID, FragmentShaderID);
+            GL.DeleteShader(VertexShaderID);
+            GL.DeleteShader(FragmentShaderID);
+            GL.DeleteProgram(ProgramID);
+        }
+
+        protected abstract void BindAttributes();
+
+        protected void BindAttribute(int attribute, string variableName)
+        {
+            GL.BindAttribLocation(ProgramID, attribute, variableName);
+        }
+
+        private static int loadShader(string shaderPath, ShaderType type)
+        {
+            StringBuilder shaderSource = new StringBuilder();
+
+            try
+            {
+                StreamReader reader = new StreamReader(shaderPath);
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    shaderSource.Append(line).Append("\n");
+                }
+                reader.Close();
+            }
+            catch { }
+
+            int shaderID = GL.CreateShader(type);
+            GL.ShaderSource(shaderID, shaderSource.ToString());
+            GL.CompileShader(shaderID);
+
+            int j;
+            GL.GetShader(shaderID, ShaderParameter.CompileStatus, out j);;
+            if(j == 0) { /*big error*/ }
+
+            return shaderID;
+        }
+    }
+}
