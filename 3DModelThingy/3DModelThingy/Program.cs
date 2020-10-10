@@ -19,7 +19,7 @@ namespace _3DModelThingy
             //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Main());
 
-            var mgl = new MainGameLoop("Our Frist Display!");
+            var mgl = new MainGameLoop("Our First Display!");
             mgl.Start();
         }
     }

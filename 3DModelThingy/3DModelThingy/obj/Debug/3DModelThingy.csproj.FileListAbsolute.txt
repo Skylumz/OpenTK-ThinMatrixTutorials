@@ -17,3 +17,6 @@ D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\obj\Debug\3DModelThi
 D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\Shaders\fragmentShader.txt
 D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\Shaders\vertexShader.txt
 D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\Resources\image.jpg
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\Resources\stall.obj
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\Resources\testcube.obj
+D:\Coding\Projects\3DModelThing\3DModelThingy\3DModelThingy\bin\Debug\Resources\stallimage.jpg

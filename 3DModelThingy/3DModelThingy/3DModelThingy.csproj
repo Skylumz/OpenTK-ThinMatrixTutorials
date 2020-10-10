@@ -53,15 +53,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EngineTester\MainGameLoop.cs" />
+    <Compile Include="Entities\Camera.cs" />
+    <Compile Include="Entities\Entity.cs" />
     <Compile Include="Models\TexturedModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RenderEngine\Loader.cs" />
     <Compile Include="Models\RawModel.cs" />
+    <Compile Include="RenderEngine\OBJLoader.cs" />
     <Compile Include="RenderEngine\Renderer.cs" />
     <Compile Include="Shaders\ShaderProgram.cs" />
     <Compile Include="Shaders\StaticShader.cs" />
     <Compile Include="Textures\ModelTexture.cs" />
+    <Compile Include="Toolbox\Maths.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,12 +86,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\stall.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\testcube.obj">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\image.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\stallimage.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Shaders\fragmentShader.txt">
@@ -97,5 +110,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

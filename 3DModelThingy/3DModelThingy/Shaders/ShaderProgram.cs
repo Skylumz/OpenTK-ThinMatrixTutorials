@@ -23,9 +23,17 @@ namespace _3DModelThingy.Shaders
             ProgramID = GL.CreateProgram();
             GL.AttachShader(ProgramID, VertexShaderID);
             GL.AttachShader(ProgramID, FragmentShaderID);
+            BindAttributes();
             GL.LinkProgram(ProgramID);
             GL.ValidateProgram(ProgramID);
-            BindAttributes();
+            GetAllUniformLocations();
+        }
+
+        protected abstract void GetAllUniformLocations();
+
+        protected int GetUniformLocation(string uniformName)
+        {
+            return GL.GetUniformLocation(ProgramID, uniformName);
         }
 
         public void Start()
@@ -53,6 +61,28 @@ namespace _3DModelThingy.Shaders
         protected void BindAttribute(int attribute, string variableName)
         {
             GL.BindAttribLocation(ProgramID, attribute, variableName);
+        }
+
+        protected void LoadUniformFloat(int location, float value)
+        {
+            GL.Uniform1(location, value);
+        }
+
+        protected void LoadUniformVector(int location, Vector3 value)
+        {
+            GL.Uniform3(location, value);
+        }
+
+        protected void LoadUniformBoolean(int location, bool value) 
+        {
+            float toLoad = 0;
+            if (value) { toLoad = 1; }
+            GL.Uniform1(location, toLoad);
+        }
+
+        protected void LoadUniformMatrix(int location, Matrix4 value)
+        {
+            GL.UniformMatrix4(location, false, ref value);
         }
 
         private static int loadShader(string shaderPath, ShaderType type)
